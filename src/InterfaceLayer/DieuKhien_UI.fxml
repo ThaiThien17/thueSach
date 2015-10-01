@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="2.0" style="-fx-background-color: E3E3E3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Danh mục">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Tùy chọn">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Trợ giúp">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <BorderPane layoutY="27.0" prefHeight="367.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #EEE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-insets: 0; -fx-background-color: transparent;" styleClass="button-controller" text="Thêm" textOverrun="CLIP">
+                     <HBox.margin>
+                        <Insets left="6.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/add.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-insets: 0; -fx-background-color: transparent;" styleClass="button-controller" text="Xóa" textOverrun="CLIP">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/delete.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-insets: 0; -fx-background-color: transparent;" styleClass="button-controller" text="Sửa" textOverrun="CLIP">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/edit.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Button>
+                  <Separator focusTraversable="false" orientation="VERTICAL" prefHeight="28.0" prefWidth="0.0" stylesheets="@style/tabpane-style.css">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin></Separator>
+                  <Button mnemonicParsing="false" style="-fx-background-insets: 0; -fx-background-color: transparent;" styleClass="button-controller" text="Thống kê" textOverrun="CLIP">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/chart.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-insets: 0; -fx-background-color: transparent;" styleClass="button-controller" text="Lược sử" textOverrun="CLIP">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/log.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@style/tabpane-style.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab closable="false" text="Sách">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                <Tab closable="false" text="Thành Viên">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                  <Tab closable="false" text="Nhân Viên">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab closable="false" text="Phiếu Thuê">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab closable="false" text="Phiếu Nhập">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
