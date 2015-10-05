@@ -7,14 +7,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InterfaceLayer.java.ThemSach_UIController">
    <children>
       <BorderPane layoutX="86.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0" style="-fx-border-width: 1px 0px 0px 0px; -fx-border-color: #DDD;" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="80.0" text="Thêm" />
-                  <Button mnemonicParsing="false" prefWidth="80.0" text="Hủy" />
+                  <Button fx:id="btnThem" mnemonicParsing="false" prefWidth="80.0" text="Thêm" />
+                  <Button fx:id="btnThoat" mnemonicParsing="false" prefWidth="80.0" text="Hủy" />
                </children>
                <padding>
                   <Insets right="10.0" />
@@ -32,6 +32,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="47.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
               </rowConstraints>
@@ -41,25 +43,24 @@
                <children>
                   <Label text="Tên sách" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
                   <Label text="Nhà xuất bản" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Label text="Ngày xuất bản" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Label text="Giá bìa" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <TextField focusTraversable="false" promptText="Tên sách" GridPane.columnIndex="1" />
-                  <TextField focusTraversable="false" promptText="Nhà xuất bản" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <DatePicker editable="false" focusTraversable="false" prefHeight="23.0" prefWidth="233.0" showWeekNumbers="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Label text="Ngày xuất bản" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Label text="Giá bìa" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <TextField fx:id="txfTen" focusTraversable="false" promptText="Tên sách" GridPane.columnIndex="1" />
+                  <DatePicker fx:id="dtpNgayXB" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="264.0" showWeekNumbers="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <children>
-                        <TextField focusTraversable="false" prefHeight="23.0" prefWidth="195.0" />
+                        <TextField fx:id="txfGiaBia" focusTraversable="false" prefHeight="23.0" prefWidth="195.0" />
                         <Label prefHeight="17.0" prefWidth="33.0" text="VNĐ" />
                      </children>
                   </HBox>
-                  <Label text="Loại sách" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
-                  <ListView focusTraversable="false" prefHeight="200.0" prefWidth="229.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                     <children>
-                        <ComboBox editable="true" focusTraversable="false" prefHeight="23.0" prefWidth="230.0" />
-                        <Button focusTraversable="false" mnemonicParsing="false" text="+" HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
+                  <Label text="Loại sách" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                  <ListView fx:id="litLoaiSach" focusTraversable="false" prefHeight="200.0" prefWidth="229.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <ComboBox fx:id="cbxLoaiSach" editable="true" focusTraversable="false" prefHeight="25.0" prefWidth="244.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="cbxNXB" editable="true" prefHeight="25.0" prefWidth="255.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Tác giả" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cbxTacGia" editable="true" prefHeight="25.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Ngôn ngữ" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <ComboBox fx:id="cbxNgonNgu" editable="true" prefHeight="25.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
                <opaqueInsets>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -69,7 +70,7 @@
          <top>
             <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" style="-fx-border-color: #DDD; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="THÊM SÁCH">
+                  <Label fx:id="lblTieuDe" text="THÊM SÁCH">
                      <font>
                         <Font size="14.0" />
                      </font>

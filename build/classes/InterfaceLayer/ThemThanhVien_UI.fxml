@@ -9,17 +9,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InterfaceLayer.java.ThemThanhVien_UIController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="600.0" spacing="10.0" style="-fx-border-width: 1px 0px 0px 0px; -fx-border-color: #DDD;" BorderPane.alignment="CENTER">
                <children>
-                  <Button focusTraversable="false" mnemonicParsing="false" prefWidth="80.0" text="Thêm">
+                  <Button fx:id="btnThem" focusTraversable="false" mnemonicParsing="false" prefWidth="80.0" text="Thêm">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></Button>
-                  <Button focusTraversable="false" mnemonicParsing="false" prefWidth="80.0" text="Hủy" />
+                  <Button fx:id="btnHuy" focusTraversable="false" mnemonicParsing="false" prefWidth="80.0" text="Hủy" />
                </children>
                <padding>
                   <Insets right="10.0" />
@@ -44,37 +44,34 @@
               </rowConstraints>
                <children>
                   <Label text="Họ và tên" GridPane.halignment="RIGHT" />
-                  <TextField focusTraversable="false" promptText="Nguyễn Văn A" GridPane.columnIndex="1" />
+                  <TextField fx:id="txfTen" focusTraversable="false" promptText="Nguyễn Văn A" GridPane.columnIndex="1" />
                   <Label text="Giới tính" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="279.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <RadioButton focusTraversable="false" mnemonicParsing="false" selected="true" text="Nam">
-                           <toggleGroup>
-                              <ToggleGroup />
-                           </toggleGroup></RadioButton>
-                        <RadioButton focusTraversable="false" mnemonicParsing="false" text="Nữ">
+                        <RadioButton fx:id="radNam" focusTraversable="false" mnemonicParsing="false" selected="true" text="Nam">
                            <toggleGroup>
                               <ToggleGroup fx:id="gioitinh" />
                            </toggleGroup></RadioButton>
+                        <RadioButton fx:id="radNu" focusTraversable="false" mnemonicParsing="false" text="Nữ" toggleGroup="$gioitinh" />
                      </children>
                   </HBox>
                   <Label text="Ngày sinh" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                   <Label text="CMND" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <TextField focusTraversable="false" promptText="xxxxxxxxxx" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txfCMND" focusTraversable="false" promptText="xxxxxxxxxx" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label text="Mã số HSSV" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <TextField focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="txfHSSV" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label text="Số điện thoại" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
                   <Label text="Địa chỉ" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
                   <Label text="Email" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-                  <TextField focusTraversable="false" promptText="+84 xxx.xxx.xxx.xxx" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="txfSDT" focusTraversable="false" promptText="+84 xxx.xxx.xxx.xxx" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="txfDiaChi" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <children>
-                        <TextField focusTraversable="false" promptText="nguyenvana.1268" HBox.hgrow="ALWAYS" />
-                        <ComboBox focusTraversable="false" prefHeight="23.0" prefWidth="156.0" visibleRowCount="5" />
+                        <TextField fx:id="txfEmail" focusTraversable="false" promptText="nguyenvana.1268" HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="cbxEmailDomain" focusTraversable="false" prefHeight="23.0" prefWidth="156.0" visibleRowCount="5" />
                      </children>
                   </HBox>
-                  <TextField focusTraversable="false" promptText="xx/xx/xxxx hoặc xx-xx-xxxx" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txfNgaySinh" focusTraversable="false" promptText="xx/xx/xxxx hoặc xx-xx-xxxx" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
                <BorderPane.margin>
                   <Insets left="10.0" right="10.0" />
@@ -87,7 +84,7 @@
          <top>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: #DDD; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="367.0" text="ĐĂNG KÝ THÀNH VIÊN" textAlignment="CENTER">
+                  <Label fx:id="lblTieuDe" alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="367.0" text="ĐĂNG KÝ THÀNH VIÊN" textAlignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>

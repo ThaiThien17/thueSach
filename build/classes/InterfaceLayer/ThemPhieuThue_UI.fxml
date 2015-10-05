@@ -13,8 +13,8 @@
          <bottom>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0" style="-fx-border-width: 1px 0px 0px 0px; -fx-border-color: #DDD;" BorderPane.alignment="CENTER">
                <children>
-                  <Button focusTraversable="false" mnemonicParsing="false" prefWidth="80.0" text="Thêm" />
-                  <Button focusTraversable="false" mnemonicParsing="false" prefWidth="80.0" text="Hủy" />
+                  <Button fx:id="btnThem" focusTraversable="false" mnemonicParsing="false" prefWidth="80.0" text="Thêm" />
+                  <Button fx:id="btnHuy" focusTraversable="false" mnemonicParsing="false" prefWidth="80.0" text="Hủy" />
                </children>
                <BorderPane.margin>
                   <Insets right="10.0" />
@@ -41,8 +41,8 @@
                            <left>
                               <GridPane hgap="10.0" prefHeight="250.0" prefWidth="250.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #DDD;" vgap="10.0" BorderPane.alignment="CENTER">
                                 <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="51.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="158.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="63.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="146.0" />
                                     <ColumnConstraints />
                                 </columnConstraints>
                                 <rowConstraints>
@@ -64,8 +64,11 @@
                                  <children>
                                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <TextField focusTraversable="false" prefWidth="170.0" promptText="Mã thành viên" />
-                                          <Button focusTraversable="false" mnemonicParsing="false" text="+" />
+                                          <TextField fx:id="txfMaThanhVien" focusTraversable="false" prefWidth="170.0" promptText="Mã thành viên" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin></TextField>
+                                          <Button fx:id="txfXacNhanMa" ellipsisString="+" focusTraversable="false" mnemonicParsing="false" prefWidth="50.0" text="+" />
                                        </children>
                                     </HBox>
                                     <Label text="THÔNG TIN THÀNH VIÊN" GridPane.columnSpan="2" GridPane.halignment="CENTER">
@@ -81,21 +84,24 @@
                                     <Label text="SĐT" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
                                     <Label text="Địa chỉ" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
                                     <Label text="Email" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
-                                    <TextField editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <TextField editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <TextField editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <TextField editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                    <TextField editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                    <TextField editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                    <TextField editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                    <TextField fx:id="txfTen" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txfNgaySinh" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="txfCMND" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="txfMSSV" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <TextField fx:id="txfSDT" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <TextField fx:id="txfDiaChi" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                    <TextField fx:id="txfEmail" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <children>
-                                          <RadioButton focusTraversable="false" mnemonicParsing="false" text="Nam" />
-                                          <RadioButton focusTraversable="false" mnemonicParsing="false" text="Nữ" />
+                                          <RadioButton fx:id="radNam" focusTraversable="false" mnemonicParsing="false" text="Nam">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="gioitinh" />
+                                             </toggleGroup></RadioButton>
+                                          <RadioButton fx:id="radNu" focusTraversable="false" mnemonicParsing="false" text="Nữ" toggleGroup="$gioitinh" />
                                        </children>
                                     </HBox>
                                     <Label text="Tiền" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
-                                    <TextField editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                    <TextField fx:id="txfTien" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                                  </children>
                               </GridPane>
                            </left>
@@ -119,16 +125,16 @@
                                     </Label>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
                                        <children>
-                                          <TextField focusTraversable="false" prefHeight="23.0" promptText="Tên sách" HBox.hgrow="ALWAYS" />
-                                          <Button mnemonicParsing="false" text="Tìm kiếm" />
+                                          <TextField fx:id="txfTenSach" focusTraversable="false" prefHeight="23.0" promptText="Tên sách" HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="txfTimKiem" mnemonicParsing="false" text="Tìm kiếm" />
                                        </children>
                                     </HBox>
-                                    <ListView focusTraversable="false" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-                                    <ListView focusTraversable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                                    <ListView fx:id="litSach" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                                    <ListView fx:id="litSachThue" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                                        <children>
-                                          <Button mnemonicParsing="false" text="&gt;" />
-                                          <Button mnemonicParsing="false" text="&lt;" />
+                                          <Button fx:id="btnThue" mnemonicParsing="false" text="&gt;" />
+                                          <Button fx:id="btnHuyThue" mnemonicParsing="false" text="&lt;" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -163,8 +169,8 @@
                                     </Label>
                                     <Label text="Từ" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                                     <Label text="Đến" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                                    <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <DatePicker fx:id="dteTuNgay" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <DatePicker fx:id="dteDenNgay" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                  </children>
                               </GridPane>
                            </right>

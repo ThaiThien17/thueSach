@@ -16,16 +16,15 @@ import javafx.stage.Stage;
  *
  * @author Phan Phat
  */
-public class ThemThanhVien_UI extends Application {
+public class MasterController_UI extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("ThemNhanVien_UI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("./DieuKhien_UI.fxml"));        
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.setTitle("Thành viên");
-        stage.setResizable(false);
+        stage.setTitle("Quản lý");
         stage.show();
     }
 
