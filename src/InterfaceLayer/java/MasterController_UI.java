@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InterfaceLayer;
+package InterfaceLayer.java;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -20,7 +20,7 @@ public class MasterController_UI extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("./DieuKhien_UI.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("../DieuKhien_UI.fxml"));        
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
